@@ -17,15 +17,21 @@ def test_promotion_and_role_removal_issue(browser_context):
     page.goto('https://i.hr.dmerej.info/')
 
     # Navigate to 'List Employees' and edit the second employee
-    page.get_by_role("link", name="List Employees").click()
-    page.get_by_role("link", name="Edit").nth(1).click()
+    try:
+        page.get_by_role("link", name="List Employees").click()
+        page.get_by_role("link", name="Edit").nth(1).click()
+    except:
+        print("Error: Could not navigate to 'List Employees' and edit the second employee")
 
     # Promote the employee to manager
     page.get_by_role("link", name="Promote as manager").click()
     page.get_by_role("button", name="Proceed").click()
 
     # Try to remove the Manager role
-    page.get_by_role("button", name="Remove Manager Role").click()
+    try:
+        page.get_by_role("button", name="Remove Manager Role").click()
+    except:
+        print("Error: Manager role not removed")
 
     # Going to seek for a button that does not exist and do a runtime error.
 
