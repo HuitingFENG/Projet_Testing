@@ -1,5 +1,7 @@
 import pytest
 import requests
+from playwright.sync_api import sync_playwright
+
 
 def test_website_link():
     url = "https://i.hr.dmerej.info/"
@@ -11,3 +13,6 @@ def test_add_employee():
     data = {"name": "Test Employee"}
     response = requests.post(url, data=data)
     assert response.status_code == 200, "Failed to add employee"
+    
+    
+    
