@@ -19,6 +19,11 @@ class EmployeePage:
         self.page.locator('input[placeholder="Hiring date"]').fill(hiring_date)
         self.page.locator('input[placeholder="Job title"]').fill(job_title)
         self.page.locator('button:has-text("Add")').click()
+        
+    def reset_db_without_password(self):
+        self.page.locator('a:has-text("Reset database")').click()
+        self.page.locator('button:has-text("Proceed")').click()
+        assert self.page.url == 'https://i.hr.dmerej.info/'
 
 @pytest.fixture(scope="function")
 def browser_context():
@@ -33,3 +38,9 @@ def test_add_new_employee(browser_context):
     employee_page = EmployeePage(page)
     employee_page.navigate()
     employee_page.add_employee('name1', 'email1@efrei.net', 'address1', 'address2', 'paris', '75011', '2020-02-23', 'dev full stack')
+    
+def test_reset_db_without_password(browser_context):
+    page = browser_context.new_page()
+    employee_page = EmployeePage(page)
+    employee_page.navigate()
+    employee_page.reset_db_without_password()
