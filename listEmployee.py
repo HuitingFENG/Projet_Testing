@@ -1,5 +1,3 @@
-# test_frontend_with_playwright_pytest.py
-
 import pytest
 from playwright.sync_api import sync_playwright
 
