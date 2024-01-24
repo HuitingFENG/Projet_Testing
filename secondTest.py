@@ -46,3 +46,23 @@ def test_reset_db_without_password (browser_context):
      # user can go back to the main page, means that the database can be reset without password.
     assert page.url == 'https://i.hr.dmerej.info/'
     context.tracing.stop(path='trace.json')
+    
+    
+def test_remove_manager_role(browser_context):
+    context = browser_context
+    page = context.new_page()
+    context.tracing.start()
+    page.goto('https://i.hr.dmerej.info/')
+    page.get_by_role('link', name='List Employees').click()
+    # check an old employee who is not a manager yet
+    page.get_by_role('button', name='Edit').click()
+    page.get_by_role('link', name='Promote as manager').click()
+    page.get_by_role('button', name='Proceed').click()
+    page.get_by_role('link', name='Home').click()
+    page.get_by_role('link', name='List Employees').click()
+    page.get_by_role('button', name='Edit').click()
+    page.get_by_role('link', name='Promote as manager').click()
+    # Check if any new element is added after promoting as manager
+    new_elements = page.locator('*')  # Selects all elements on the page
+    assert new_elements.count() > 0  # Check if there's at least one new element: button called remove
+    context.tracing.stop(path='trace.json')
