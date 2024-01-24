@@ -1,0 +1,23 @@
+{
+  "name": "project-testing-team-i",
+  "version": "1.0.0",
+  "description": "# Team I : M2 SE1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuitingFENG/project-testing-team-i.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuitingFENG/project-testing-team-i/issues"
+  },
+  "homepage": "https://github.com/HuitingFENG/project-testing-team-i#readme",
+  "dependencies": {
+    "playwright": "^1.41.1"
+  }
+}
