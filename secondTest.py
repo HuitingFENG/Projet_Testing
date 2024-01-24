@@ -33,3 +33,16 @@ def test_add_new_employee(browser_context):
     page.get_by_role('button', name='Add').click()
     context.tracing.stop(path='trace.json')
 
+
+# reset db without password
+def test_reset_db_without_password (browser_context):
+    context = browser_context
+    page = context.new_page()
+    context.tracing.start()
+    page.goto('https://i.hr.dmerej.info/')
+    page.get_by_role('link', name='Reset database').click()
+    page.get_by_role('button', name='Proceed').click()
+     # Check if the user is back on the main page after reset
+     # user can go back to the main page, means that the database can be reset without password.
+    assert page.url == 'https://i.hr.dmerej.info/'
+    context.tracing.stop(path='trace.json')
