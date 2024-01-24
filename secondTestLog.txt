@@ -5,9 +5,9 @@ rootdir: /Users/fenghuiting/Desktop/project-testing-team-i
 collecting ... collected 4 items
 
 secondTest.py::test_add_new_employee PASSED                              [ 25%]
-secondTest.py::test_reset_db_without_password PASSED                     [ 50%]
-secondTest.py::test_remove_manager_role FAILED                           [ 75%]
-secondTest.py::test_zipcode FAILED                                       [100%]
+secondTest.py::test_remove_manager_role FAILED                           [ 50%]
+secondTest.py::test_zipcode FAILED                                       [ 75%]
+secondTest.py::test_reset_db_without_password PASSED                     [100%]
 
 =================================== FAILURES ===================================
 ___________________________ test_remove_manager_role ___________________________
@@ -23,7 +23,7 @@ browser_context = <BrowserContext browser=<Browser type=<BrowserType name=chromi
         # check an old employee who is not a manager yet
 >       page.get_by_role('button', name='Edit').click()
 
-secondTest.py:58: 
+secondTest.py:46: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/playwright/sync_api/_generated.py:15864: in click
     self._sync(
@@ -37,7 +37,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     return await cb()
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <playwright._impl._connection.Channel object at 0x107d04100>
+self = <playwright._impl._connection.Channel object at 0x11113e7a0>
 method = 'click'
 params = {'selector': 'internal:role=button[name="Edit"i]', 'strict': True}
 return_as_dict = False
@@ -79,7 +79,7 @@ browser_context = <BrowserContext browser=<Browser type=<BrowserType name=chromi
         page.get_by_role('link', name='List Employees').click()
 >       page.get_by_role('button', name='Edit').click()
 
-secondTest.py:76: 
+secondTest.py:64: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/playwright/sync_api/_generated.py:15864: in click
     self._sync(
@@ -93,7 +93,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     return await cb()
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <playwright._impl._connection.Channel object at 0x108255d80>
+self = <playwright._impl._connection.Channel object at 0x111405930>
 method = 'click'
 params = {'selector': 'internal:role=button[name="Edit"i]', 'strict': True}
 return_as_dict = False
@@ -126,4 +126,4 @@ E       playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
 =========================== short test summary info ============================
 FAILED secondTest.py::test_remove_manager_role - playwright._impl._errors.Tim...
 FAILED secondTest.py::test_zipcode - playwright._impl._errors.TimeoutError: T...
-==================== 2 failed, 2 passed in 67.83s (0:01:07) ====================
+==================== 2 failed, 2 passed in 68.70s (0:01:08) ====================
